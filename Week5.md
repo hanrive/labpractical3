@@ -1,6 +1,6 @@
 # What is ArcGIS Enterprise?
 
-* "ArcGIS Enterprise is the foundational software system for GIS, powering mapping and visualization, analytics, and data management. It is the backbone for running the Esri suite of applications and your own custom applications... Collaboration and flexibility are central to ArcGIS Enterprise, allowing you to organize and share your work on any device, anywhere, at any time. ArcGIS Enterprise gives you complete control over your deployment." *
+* "ArcGIS Enterprise is the foundational software system for GIS, powering mapping and visualization, analytics, and data management. It is the backbone for running the Esri suite of applications and your own custom applications... Collaboration and flexibility are central to ArcGIS Enterprise, allowing you to organize and share your work on any device, anywhere, at any time. ArcGIS Enterprise gives you complete control over your deployment."*
 
 ## Communicate what the purpose of AGE is to a company or organization
 
