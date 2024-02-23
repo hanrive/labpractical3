@@ -2,6 +2,27 @@
 With Server admin access: https://luna.flemingcollege.ca:6443/arcgis/rest/services/geom99am/hariveCanada/MapServer
 Without Server admin access: https://luna.flemingcollege.ca/arcgis/rest/services/geom99am/hariveCanada/MapServer
 
+## Steps for uploading to ArcGIS Server from ArcGIS Pro:
+- download the data
+- export and save the data the same way (file names) as is on the server (in this case it's C:\GISWorkspace\Canada)
+- create a new arcgis pro project
+- add the Canada.shp
+- go to catalog view
+- under insert -> connections -> new arcgis server
+  - (using the VDI we have to use the port because we are internal/connected to the college and using the web adapter to the luna server
+from home we were temporarily allowed to use port 443)
+- Add ArcGIS Server Connection:
+> Server URL: https://luna.flemingcollege.ca:6443/arcgis
+> Username: adroot\harive
+> Password: PASSWORD
+- Change the name of the map to something unique
+- To publish the map go to catalog pane -> project tab -> under servers -> publish -> map service a file explorer will pop up, on the left side under Map click the name you named your map to and then press ok
+- under configerations only select map as we are uploading a shapefile that cannot be editable by multiple people (if you were to select feature but can only do so for enterprise)
+- there will be an error of 'Unique numeric IDs are not assigned'. just right click and select their fix
+- by default reference the data, DO NOT COPY
+- specify what location we want the map to publish to (in this case geom99am)
+- And then click publish!
+
 # Adding ArcGIS Server (Luna) Map Services to ArcGIS Online
 
 Published map service: https://luna.flemingcollege.ca:6443/arcgis/rest/services/geom99am/hariveCanada/MapServer
@@ -9,6 +30,12 @@ Published map service: https://luna.flemingcollege.ca:6443/arcgis/rest/services/
 AGOL item: https://fleming.maps.arcgis.com/home/item.html?id=1c6489e53ae749e1b98fe7280c3218d0
 
 Web Map: https://www.arcgis.com/home/webmap/viewer.html?url=https%3A%2F%2Fluna.flemingcollege.ca%3A6443%2Farcgis%2Frest%2Fservices%2Fgeom99am%2FhariveCanada%2FMapServer&source=sd
+
+## Steps for adding to map serve to a map in ArcGIS Online
+- in AGOL click on new item -> URL option
+- paste the URL to the map serve REST endpoint that has the 0 at the end for layer
+  - e.g. https://luna.flemingcollege.ca:6443/arcgis/rest/services/geom99am/hariveCanada/MapServer/0
+- because it is secured click 'Store Credentials with serve item' option
 
 *Why did you have to add ADROOT\ to the login information when adding the luna layer reference to ArcGIS Online? Did your map projection change? What is the initial map extent? What properties from your originally published map carry forward?*
 - ADROOT\ (active directory root) is the active directory domain provided by Microsoft of where my user information is and by using ADROOT\ is telling ArcGIS PRO where my fleming details are located
